@@ -1,0 +1,5 @@
+## rsync
+
+rsync -hva --include --delete --exclude
+
+rsync -hvPa --progress --ignore-errors Arquivos/ root@192.168.1.145:/srv/dev-disk-by-id-scsi-0QEMU_QEMU_HARDDISK_drive-scsi1-part1/Arquivos
