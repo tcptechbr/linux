@@ -1,0 +1,165 @@
+Comandos VIM
+No editor VIM temos 3 formas para entrar em modo de edição
+i = entra no modo de edição mantendo o cursor na posição original
+a = entra no modo de edição movendo o cursor um carácter a direita da posição atual
+o = entra no modo de edição inserindo uma linha abaixo da posição original do cursor
+O = entra no modo de edição inserindo uma linha acima da posição original do cursor
+
+Principais Comandos no VIM:
+Esc - > [: + w] = Para salvar o arquivo
+
+Esc - > [ : + w + backspace + "nome-do-arquivo" ] = Para salvar o novo arquivo e dar um nome para ele
+
+Esc - > [ : + w + q ] = Para sair do arquivo salvando
+
+Esc - > [ : + x ] = Para sair salvando o arquivo
+
+gg = Vai para o inicio do arquivo
+
+Shift + G = Vai para o final do arquivo
+
+yy = Para copiar a linha inteira onde o cursor se encontra
+
+p = Para colar a linha copiada na posição que se encontra o cursor
+
+cc = Para recorta a linha toda em que se encontra o cursor
+
+dd = Para deletar/recortar a linha toda em que se encontra o cursor
+
+Shift + D = Para recortar tudo o que estiver a direta do cursor
+
+x = apaga o carácter no qual o cursor se encontra
+
+Shift + X = apaga o carácter anterior ao qual o cursor se encontra
+
+u = Para desfazer alterações no arquivo, equivalente ao (Ctrl+Z)
+
+y3y = Para copiar 3 linhas de uma vez, e isso respectivamente
+
+d3d = Para recortar 3 linhas de vez, e isso respectivamente
+
+d + Shift + G = limpa o arquivo (recorta todas as linhas de um arquivo)
+
+Esc - > [ : + q + ! ] = sai forçado sem salvar
+
+Salvando:
+Shift+zz (ZZ = Zalva e Zai)
+
+:w - > Salva, permanece dentro da edição
+
+:wq - > Fecha salvando
+
+:x - > Fecha salvando
+
+:wqa - > Salvar todos e sai, quando aberto várias janelas
+
+:qa - > Sai de todos sem salvar
+
+Pesquisas:
+/ - > para pesquisar algo
+Ex: /nologin
+Para alternar entre o item de pesquisa [n]
+Para voltar para o item anterior [Shift+N]
+
+:13 d - > apaga a linha 13 através da busca
+
+Janelas no vim:
+vim -O /tmp/passwd /tmp/group (abre 2 arquivos no vim na vertical)
+
+vim -o /tmp/passwd /tmp/group (abre 2 arquivos no vim na horizontal)
+
+Ctrl+w -> Para alternar entre as janelas de edição
+
+Dentro do vim é possível utilizar comandos do shell
+:! ip a - > executa o comando 'ip a' no terminal e mostra o resultado, sem fechar o arquivo do vim
+
+Para selecionar várias linhas
+Esc + [ Shift + v] - ativa modo visual/linha, seleciona a linha toda, apos a seleção é possível executar outros comandos para copiar, apagar, etc.
+Esc + [Ctrl + v] - ativa modo visual/bloco, seleciona a posição do cursor, por bloco, apos a seleção é possível executar outros comandos para copiar, apagar, etc.
+
+Editar várias linhas, exemplo comentando
+Esc + [ Ctrl + v ] + [ Shift + i ] + [ Shift + 3 ] + Esc
+
+[Esc] para acessar o modo de comando
+[Ctrl + v] para ativar modo visual/bloco, é possível selecionar várias linhas
+[Shift + i] ativa o modo inserção
+[Shift + 3] adiciona o '#' símbolo para comentário
+[Esc] retorna para o modo de comando e aplica as edições
+
+Para organizar em ordem alfabética
+Esc + [ Shift + v ] - > [ : + '<,'>sort ]
+
+Para habilitar o mouse no VIM
+:set mouse=a
+
+Substituição
+:%s/nologin/yeslogin/g - > substitui de forma global
+:s/yeslogin/nologin/g - > substitui apenas na linha atual onde se encontra o cursor
+2,10s/yeslogin/nologin/g -> substitui as ocorrências da palavra yeslogin pela nologin a partir da linha 2 até alinha 10
+
+Add/remove number
+:set nu - > add números as linhas da edição
+:set number
+
+:set nonumber - > desativa números
+:set nonu
+:set nu!
+
+Configuração
+O arquivo de configuração do VIM se encontra na home do usuário, e possui o nome [.vimrc], porém este arquivo não vem por padrão em todas as distribuições, como por exemplo no CentOS.
+
+Neste caso é possível copiar de um modelo da configuração deste arquivo que se encontra nos arquivos de configuração, através do comando em /etc/vimrc [cp /etc/vimrc ~/.vimrc] copiando o modelo para a home do usuário com o nome de [.vimrc], ou apenas criando um novo arquivo com o comando > .vimrc ou vim .vimrc, e colar o conteúdo abaixo no arquivo.
+
+Principais comando do vim para adicionar no .vimrc :
+set number
+set linebreak
+set nobackup
+set wildmode=longest,list
+set ignorecase
+set smartcase
+set gdefault
+set smartindent
+set expandtab
+set tabstop=2
+set shiftwidth=2
+set guioptions-=T
+set autochdir
+set cursorline
+set hlsearch
+set pumheight=15
+set completeopt=menu,preview
+set spelllang=pt
+set foldenable
+set foldcolumn=1
+set foldmethod=marker
+set foldmarker={,}
+set foldlevel=9999
+set paste
+set mouse=a
+
+Explicação sobre os comandos:
+set number " Numera as linhas
+set linebreak " Quebra a linha sem quebrar a palavra
+set nobackup " Não salva arquivos de backup~
+set wildmode=longest,list " Completa o comando com TAB igual o bash
+set ignorecase " Ignora o case sensitive nas buscas
+set smartcase " Se tiver alguma letra maiúscula, ativa o case sensitive
+set gdefault " Sempre substitui todas as palavras, não só a primeira
+set smartindent " Auto-indenta
+set expandtab " Indenta com espaços
+set tabstop=2 " Quantidade de espaços por indentação
+set shiftwidth=2 " Quantidade de espaços da auto-indentação
+set guioptions-=T " Deixa a GUI sem a toolbar
+set autochdir " Vai pro diretório do arquivo aberto
+set cursorline " Mostra linha atual mais clara
+set hlsearch " Termo procurado em destaque
+set pumheight=15 " Máximo de palavras no pop up de autocomplete
+set completeopt=menu,preview " Como mostrar as possibilidade de inserção
+set spelllang=pt " Escolhe o dicionário
+set foldenable " Habilita agrupamento de blocos
+set foldcolumn=1 " Exibe coluna com + e - para agrupamentos
+set foldmethod=marker " Define agrupamento por marcas
+set foldmarker={,} " Define marcas de agrupamento como { e }
+set foldlevel=9999 " Inicia com todos os agrupamentos abertos
+set paste "Habilita a colagem sem desformatar
+set mouse=a " Habilita o uso do mouse (todos os modos)

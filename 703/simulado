@@ -1,0 +1,330 @@
+Testes 703 LPI - LiveLab 2
+1. Qual o valor numérico para o descritor de saída de erro (sterr) no Linux?
+a) 0
+b) 2
+c) 1
+d) -1
+
+2. Observando a permissão lrwxrwxrwx o que é possível afirmar ?
+a) O arquivo possui o bit especial SUID
+
+b) O arquivo é um link simbólico
+
+c) O arquivo possui o bit especial SGIB
+
+d) O arquivo é um link físico
+
+3. Qual comando irá criar de uma só vez todos os diretórios da árvore 4linux/curso703/sysadmin?
+a) mkdir -r 4linux/curso703/sysadmin
+
+b) mkdir 4linux curso703 sysadmin
+
+c) mkdir 4linux/curso703/sysadmin
+
+d) mkdir -p 4linux/curso703/sysadmin
+
+4. Qual comando pode ser utilizado para contar a quantidade de linhas em que a palavra “nologin” aparece no arquivo /etc/passwd
+a) egrep -n "nologin" /etc/passwd
+
+b) fgrep nologin /etc/passwd
+
+c) grep -c nologin /etc/passwd
+
+d) grep -l "nologin" /etc/passwd
+
+5. Qual opção utilizada no comando rm pedirá uma confirmação para o usuário antes de remover qualquer arquivo ou diretório?
+a) -f
+
+b) -i
+
+c) -q
+
+d) -c
+
+6. Com qual formato é possível escrever a frase “Agora são XX horas e YY minutos”, de forma que um único comando sempre mostre as horas e minutos atualizados a partir do comando date.
+a) echo 'Agora são date +%Hhoras e date +%M minutos'
+
+b) echo "Agora são date +%H horas e $(date +%M) minutos"
+
+c) echo "Agora são date +H horas e date +M minutos"
+
+d) echo Agora são "date +%H" horas e "date +%M" minutos
+
+7. No editor de textos VI, qual tecla deve ser utilizada para entrar em modo de edição na linha abaixo da qual está posicionada o cursor?
+a) o
+
+b) i
+
+c) a
+
+d) n
+
+8. O arquivo alunos.txt contém uma lista com nomes completos de alunos do curso 703. Qual comando irá retornar o nome completo apenas dos alunos cujo primeiro nome seja Linus.
+a) grep -v Linus alunos.txt
+
+b) egrep "Linus$" alunos.txt
+
+c) egrep ^linus alunos.txt
+
+d) grep "^Linus" alunos.txt
+
+9. Qual comando pode ser utilizado para exibir apenas as variáveis exportadas de uma sessão do shell?
+a) setenv
+
+b) listenv
+
+c) env
+
+d) set
+
+10. De acordo com o FHS, em qual diretório são encontrados os arquivos de manuais dos sistema?
+a) /opt/man
+
+b) /usr/share
+
+c) /usr/lib
+
+d) /var/doc
+
+11. No VI, quais dos comandos abaixo podem ser utilizados para salvar um documento e em seguida sair do editor de texto? (Selecione 3)
+a) :q!
+
+b) XX
+
+c) :x
+
+d) ZZ
+
+e) :wq
+
+12. Ao utilizar o comando split em um arquivo, por padrão qual será o tamanho máximo de cada novo arquivo criado?
+a) 100 linhas
+
+b) 1000 linhas
+
+c) 1000 bytes
+
+d) 512 bytes
+
+13. Qual a função do seguinte comando?
+1
+ln arquivo1 arquivo2
+a) Criar um hard link chamado arquivo1 que aponta para arquivo2
+
+b) Criar um link simbolico chamado arquivo1 apontando para arquivo2
+
+c) Criar um link simbolico para arquivo1, chamado arquivo2
+
+d) Criar um hard link para arquivo1, chamado arquivo2
+
+14. Você está no VI, em modo de navegação, e deseja apagar a linha atual e as 20 linhas seguintes. Qual conjunto de teclas pode ser utilizado?
+a) d20d
+
+b) 20dd
+
+c) 21dd
+
+d) :20d
+
+15. Você desejar definir a variável LINUX com o Valor “Curso 703”, qual comando deve ser utilizado?
+a) LINUX="Curso 703"
+
+b) LINUX = 'Curso 703'
+
+c) LINUX(Curso 703)
+
+d) LINUX=Curso 703
+
+16. Qual comando irá enviar ao programa “relatorio” o arquivo dados como entrada e registrar as informações de erro no arquivo erros.txt?
+a) relatorio < dados 2> erros.txt
+
+b) relatorio > dados 2> erros.txt
+
+c) dados > relatorio > erros.txt
+
+d) relatorio < dados >> erros.txt
+
+17. Qual comando irá retornar todos arquivos que comecem com a string “cloud” e terminem com “log” e que estão localizados no diretório /?
+a) find / cloud*log
+
+b) find -dir / -iname cloud*log
+
+c) find -name / "cloud*log"
+
+d) find / -name "cloud*log"
+
+18. Das expressões regulares abaixo, qual pode ser utilizada para encontrar em um texto, números de telefone no formato 999-999-9999?
+a) [0-9,3]-[0-9,3][0-9,4]
+
+b) [0-9]{3}-[0-9]{3}-[0-9]{4}
+
+c) 0-9-0-9-0-9
+
+d) [0-9,0-9,0-9]-[0-9,0-9,0-9]-[0-9,0-9,0-9,0-9]
+
+19. Quais dos comandos abaixo podem ajudar um usuário a encontrar informações e ajuda sobre um comando? (Selecione 3)
+a) info
+
+b) man
+
+c) history
+
+d) mkdir
+
+e) whatis
+
+20. Qual dos seguintes comandos irá enviar a saída do programa app-linux para o arquivo teste.txt e para a saída padrão (tela) do usuário?
+a) app-linux | tee teste.txt
+
+b) app-linux > tee teste.txt
+
+c) app-linux > teste.txt | tee
+
+d) app-linux >> teste.txt
+
+21. Qual comando tem como principal função encontrar o caminho de determinado comando, baseado nos diretórios definidos na variável de ambiente PATH?
+a) file
+
+b) which
+
+c) type
+
+d) locate
+
+22. Quais comandos abaixo podem ser utilizados para numerar as linhas do arquivo texto resultado.txt, desconsiderando as linhas em branco? (Selecione 2 respostas)
+a) cat -n result.txt
+
+b) tac result.txt
+
+c) cat -b result.txt
+
+d) nl result.txt
+
+e) nl -b result.txt
+
+23. Qual comando atualiza a base de dados utilizada pelo comando locate?
+a) ldconfig
+
+b) locate -u
+
+c) updatedb
+
+d) whereis
+
+24. Considerando o arquivo teste.txt com o seguinte conteúdo:
+1
+2
+3
+4
+5
+6
+7
+8
+Aula1
+Aula11
+Aula12
+Aula111
+Aula 2
+Aula 22
+Aula3
+Aula4
+Qual o resultado do comando?
+1
+egrep -c Aula1+ teste.txt
+a) 1
+
+b) 4
+
+c) 8
+
+d) Sem retorno
+
+25. O arquivo file1 é um link físico do arquivo file2. Qual das afirmações abaixo são verdadeiras? (Selecione 3)
+a) As mesmas permissões aplicadas ao arquivo file1 serão validas no arquivo file2
+
+b) file1 e file2 compartilham o mesmo inode
+
+c) Ao apagar file1, o arquivo file2 também será removido
+
+d) file1 e file2 devem obrigatoriamente estar na mesma partição
+
+e) Ao apagar file2, o link file1 será quebrado impedindo o acesso aos dados
+
+26. O administrador do sistema deseja compactar todos os arquivos do diretório /var que terminem com “703.log”. Qual comando pode ser utilizado?
+a) find /var -name "*703.log" | tar zcf
+
+b) ls -l /var/*703.log | xargs gzip
+
+c) find /var -name "*703.log" | xargs gzip
+
+d) find /var -name "*703.log" | gzip
+
+27. O usuário declarou a variável SISTEMA em sua sessão do shell e deseja que todos os processos iniciados a partir deste shell sejam capazes de visualizar o conteúdo desta variável. Qual comando deve ser usado?
+a) set $SISTEMA
+
+b) define $SISTEMA
+
+c) env SISTEMA
+
+d) export SISTEMA
+
+28. No editor de textos VI, qual comando deve ser utilizado para posicionar o cursor na última linha de um arquivo, independente de quantas linhas o arquivo possui?
+a) :$
+
+b) :end
+
+c) EE
+
+d) :!
+
+29. Qual arquivo presente no diretório de um usuário armazena o histórico de comandos digitados?
+a) .history_profile
+
+b) .bashrc_history
+
+c) .bashrc_profile
+
+d) .bash_history
+
+30. Qual o resultado da execução do comando abaixo:
+1
+echo Curso Linux Online | tr -d 'aeiou'
+a) Crs Lnx Onln
+
+b) Curso Linux Online
+
+c) Ocorre um Erro de Sintaxe
+
+d) Crs Lnx nln
+
+Gabarito
+1 - b) 2
+2 - b) O arquivo é um link simbólico
+3 - d) mkdir -p 4linux/curso703/sysadmin
+4 - c) grep -c nologin /etc/passwd
+5 - b) -i
+6 - b) echo "Agora são date +%H horas e $(date +%M) minutos"
+7 - a) o
+8 - d) grep "^Linus" alunos.txt
+9 - c) env
+10 - b) /usr/share
+11 - c) :x | d) ZZ | e) :wq
+12 - b) 1000 linhas
+13 - d) Criar um hard link para arquivo1, chamado arquivo2
+14 - c) 21dd
+15 - a) LINUX="Curso 703"
+16 - a) relatorio < dados 2> erros.txt
+17 - d) find / -name "cloudlog"
+18 - b) [0-9]{3}-[0-9]{3}-[0-9]{4}
+19 - a) info | b) man | e) whatis
+20 - a) app-linux | tee teste.txt
+21 - b) which
+22 - c) cat -b result.txt | d) nl result.txt
+23 - c) updatedb
+24 - b) 4
+25 - a) | b) | d)
+26 - c) find /var -name "703.log" | xargs gzip
+27 - d) export SISTEMA
+28 - a) :$
+29 - d) .bash_history
+30 - a) Crs Lnx Onln

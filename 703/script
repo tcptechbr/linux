@@ -1,0 +1,191 @@
+#!/bin/bash
+#
+#-------------------------------------------------#
+# Script Name: script.sh
+# Description: Interagindo com o Bash
+# E-mail: 4linux@example.com
+# Written by: DM-4linux
+#-------------------------------------------------#
+# Usage: ./script.sh
+#-------------------------------------------------#
+#
+TIME=2 
+clear 
+
+echo "Olá Humano!!" 
+echo " " 
+echo "Qual é o seu nome?"
+
+read NOME 
+sleep 1 
+echo " "
+echo "Boas vindas $NOME ao Fabuloso Mundo Linux!" 
+sleep $TIME
+
+echo " " 
+
+echo "Por questões de segurança, qual a sua idade?"
+
+read IDADE 
+
+echo " " 
+
+sleep $TIME
+if [ $IDADE -ge 18 ] 
+then 
+    echo "Ok, como você tem $IDADE anos, pode utilizar o serviço como quiser!" 
+else
+    echo "Vish, você tem $IDADE anos, chame um responsável antes de continuar..." 
+    sleep 3
+
+echo " " 
+
+echo "Já chamou seu responsável??? Digite uma opção '(yes|y)/(no|n)'." 
+read RESPOSTA; 
+
+echo " " 
+
+case  "$RESPOSTA" in 
+
+    yes|YES|y) 
+        echo "Beleza... Pode continuar a utilizar os serviços!"
+        ;; 
+    no|NO|n) 
+        echo "Infelizmente não podemos continuar..." 
+        echo "Saindo do programa..."
+        sleep $TIME
+        exit 0 
+        ;;
+        *)
+        echo "Opção invalida, saindo do programa..."
+        sleep $TIME
+        exit 0 
+
+esac 
+fi  
+sleep $TIME
+
+echo " " 
+echo "Se quiser saber mais sobre mim, execute o comando 'man bash', quando encerrar este programa."
+    sleep $TIME
+
+echo " " 
+echo -e "Mas... Quer saber sobre mim agora? 
+Vou contar até 5 enquanto você pensa, ok?" 
+sleep $TIME
+echo " " 
+
+for i in $(seq 5); 
+do 
+    echo $i; 
+  sleep 1
+done 
+
+echo "Pronto já pensou??" 
+echo " " 
+echo "Ok, se já pensou..."
+echo "1 - Execute o meu manual."  
+echo "2 - Se ainda não pensou."
+read RESP; 
+
+if [ $RESP == "1" ]; 
+then 
+    man bash > manual-bash && cat manual-bash 
+    echo "############################################" 
+    echo " " 
+    echo "Viva agora você vai aprender tudo sobre mim!" 
+        sleep $TIME
+
+elif [ $RESP == "2" ]; 
+then 
+    echo "Tu é indeciso hein... "   
+    echo " "
+    echo "Vou contar de novo até você decidir..."   
+        sleep $TIME
+
+    a=1 
+    while [ $a -le 10 ]; do 
+    echo $a;
+  sleep 1
+    (( a++ )) 
+    done 
+
+sleep $TIME
+echo " "
+apt-get install figlet > /dev/null 2>&1 
+figlet Error 404 
+
+echo " "
+sleep 4
+fi 
+
+while true; do 
+echo "#######################################"
+echo "## Vamos gerenciar algo no sistema? ###"  
+echo "#######################################"
+echo "1 - Atualizar o sistema"
+echo "2 - Realizar limpeza de pacotes não utilizados no sistema"
+echo "3 - Realizar backup de um diretório do sistema"
+echo "4 - Fazer uma lista de Super Herois"
+echo "5 - Adicionar um usuario ao sistema"
+echo "0 - Sair do Programa"
+echo " "
+read -a OPCAO -p "Escolha uma opção: " 
+
+NOMEBKP="$DIR.`date +"%H%M%S"`" 
+
+if [  $OPCAO == "1" ]; 
+then 
+    echo "Atualizando o sistema... Aguarde"
+    apt-get update && apt-get upgrade -y 
+    sleep $TIME
+
+    echo "Sistema atualizado com sucesso!"
+
+elif [ $OPCAO == "2" ]; 
+then 
+    echo "Removendo pacotes não utilizados"
+    apt autoremove 
+    sleep $TIME
+    echo "Pacotes removidos"
+
+elif [ $OPCAO == "3" ]; 
+then
+    echo "Fazendo o backup, aguarde!"
+    mkdir -p /root/backups/ 
+    read -a DIR -p "Qual diretório quer realizar backup? "
+    tar -cjvf /root/backups/$NOMEBKP.tar.bz /$DIR > /dev/null 2>&1 
+    sleep $TIME
+    echo "Backup Realizado!!"
+
+elif [ $OPCAO == "4" ];
+then
+    echo "('Escreva os nomes separados por espaços')"
+    read -a HEROES -p "Quais herois quer listar? "
+
+    echo "Você listou os seguintes herois: "
+    for super in ${HEROES[@]}; 
+    do
+        echo $super 
+    done    
+
+elif [ $OPCAO == "5" ];
+then
+    read -a USER -p "Quais nomes de usuarios quer adicionar? "
+    echo "('Escreva os nomes separados por espaços')"
+
+    for u in ${USER[@]};
+    do
+    useradd -m -s /bin/bash $u
+    echo "*******************"
+    awk -F: '($3 >= 1000) {print $1,$3,$6}' /etc/passwd
+    echo "*******************"
+    done
+
+elif [ $OPCAO == "0" ];
+then 
+    echo "Saindo do programa!"
+    exit 0;
+
+fi
+done

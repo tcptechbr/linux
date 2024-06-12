@@ -1,0 +1,42 @@
+Atalhos do Bash
+Ctrl+A (HOME)=> Move o cursor para o inicio do comando
+
+Ctrl+E (END)=> Move o cursor para o final do comando
+
+Ctrl+B => Para mover o cursor retornando para o inicio de carácter em carácter
+
+Ctrl+U => Apaga/Copia tudo o que estiver à esquerda do cursor
+
+Ctrl+W => Apaga a palavra que estiver a esquerda do cursor
+
+Ctrl+Y => Cola o que apagou/copiou através do [Ctrl+U]
+
+Ctrl+K => Apaga/Copia tudo o que estiver a direta do cursor
+
+Ctrl+R => Realiza uma busca por caracteres já executados, pela lista de histórico de comandos.
+
+Quando aparecer [(reverse-i-search)`':] é só digitar o inicio de um comando desejado, é possível alternar entre os resultados apertando [Ctrl+R] novamente até encontrar o resultado desejado, e então apertar [ENTER] para executar ou usar as setas para editar a parte desejada
+
+Ctrl+D => fechar a sessão atual do shell, mesma função do comando [exit]
+
+Ctrl+Shift+T => abre uma nova aba no terminal
+
+Alt+Shift+3 => comenta automaticamente a linha
+
+Ctrl+L => limpa a tela, mesma função do comando [clear]
+
+Alt + T => inverte os argumentos em sequencia na linha
+
+Tab => Realiza um autocompletar, de comados, arquivos, e caminhos de diretórios
+
+Seta para Cima => Retorna a opção do último comando executado
+
+!xxx => executa número do comando especificado
+
+(1⁰ executar comando [history], ver número do comando desejado.
+
+!! => executar o comando anterior, é possível passar novos comandos junto como o 'sudo' (sudo !! -> executar o comando anterior como um usuário administrador)
+
+Esc + . => pega o parâmetro do comando anterior para executar em um novo comando digitado
+
+!* => pega todos os argumentos do comando anterior e executar após o novo comando digitado
